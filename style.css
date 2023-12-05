@@ -1,0 +1,204 @@
+.a {grid-area: a;}
+.b {grid-area: b;}
+.c {grid-area: c;}
+.d {grid-area: d;}
+.f {grid-area: f;}
+
+.a, .b, .c, .d, .f {
+    padding: 13px;
+    align-items: center;
+    background-color: rgb(44, 64, 44);
+    font-weight: bold;
+    color: bisque;
+}
+
+.direction {
+    border-bottom: 1px solid;
+    font-family: 'Fanwood';
+    padding-left: 26%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    row-gap: .5em;
+    grid-template-areas:
+    'a'
+    'c'
+    'd'
+    'b'
+    'f';
+}
+.wrapper > .c, .d, .f {margin: auto;}
+.wrapper > .c > img {width: 100%; height: auto;}
+.wrapper > .f > img {width: 100%; height: auto;}
+.wrapper > .d > img {width: 100%; height: auto;}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    row-gap: .5em;
+    grid-template-areas:
+    'a'
+    'c'
+    'b';
+}
+main > .a, .c, .b {width: 90%;}
+main > .b > img {width: 100%; height: auto;}
+main > .a > img {width: 100%; height: auto;}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    row-gap: .5em;
+    grid-template-areas:
+    'a'
+    'c'
+    'd'
+    'f'
+    'b'
+}
+.wrap > .a, .b, .c, .d, .f {width: 90%; margin: auto;}
+.wrap > .c > img {width: 100%; height: auto;}
+.wrap > .f > img {width: 100%; height: auto;}
+
+body {
+    background-color: rgb(71, 110, 71);
+}
+
+a {
+    color:rgb(255, 209, 196);
+    text-decoration: none;
+}
+
+a:hover {background-color: rgb(120, 120, 120);}
+a:visited {color:rgb(139, 202, 250);}
+
+@font-face {
+    font-family: 'The Neue Black';
+    src: url('fonts/TheNeue-Black.woff');
+}
+
+@font-face {
+    font-family: 'Fanwood';
+    src: url('fonts/fanwood_text-webfont.woff')
+}
+
+h1 {
+    font-family: 'The Neue Black', sans-serif;
+    font-size: 3em;
+}
+
+p {
+    font-family: 'Fanwood';
+    font-size: 1em;
+}
+
+footer {
+    padding-top: 5%;
+    padding-bottom: 1%;
+    padding-left: 40%;
+    font-weight: bold;
+    color: bisque;
+    font-family: 'Fanwood';
+    font-size: 1em;
+}
+
+button {
+    background-color: darkslategrey;
+    color: bisque;
+    padding: 5px;
+    margin: 5px;
+}
+
+.list {
+    font-family: 'Fanwood';
+    font-size: 1.4em;
+    margin-bottom: 2%;
+}
+
+
+@media (min-width: 600px){
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: .5em;
+        grid-template-areas:
+        'c c c c'
+        'a a b b'
+    }
+    main > .b > img {width: 100%; height: auto;}
+    main > .a > img {width: 100%; height: auto;}
+
+    footer {padding-left: 45%;}
+    .direction {padding-left: 35%;}
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        column-gap: .5em;
+        grid-template-areas:
+        'a d'
+        'c b'
+        'c f'
+    }
+    .wrapper > .c > img {width: 100%; height: auto;}
+    .wrapper > .f > img {width: 100%; height: auto;}
+    .wrapper > .d > img {width: 100%; height: auto;}
+}
+
+@media (min-width: 960px){
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: .5em;
+        grid-template-areas:
+        'a c b'
+        'a c b'
+    }
+    main > .b > img {width: 100%; height: auto;}
+    main > .a > img {width: 100%; height: auto;}
+    .f, .c, #a {
+        display: flex;
+    }
+    .direction {padding-left: 40%;}
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        column-gap: .5em;
+        grid-template-areas:
+        'a c b'
+        'a c b'
+        'd c f'
+    }
+    footer {padding-left: 45%;}
+    .wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: .5em;
+        grid-template-areas:
+        'a a'
+        'c f'
+        'd b'
+    }
+    .wrap > .c > img {width: 100%; height: auto;}
+    .wrap > .f > img {width: 100%; height: auto;}
+    .wrap > .a {width: 95%;}
+
+    .wrapper > .c > img {width: 100%; height: auto;}
+    .wrapper > .f > img {width: 100%; height: auto;}
+    .wrapper > .d > img {width: 100%; height: auto;}
+}
+
+@media only screen and (prefers-color-scheme: dark){
+    body {background-color: rgb(22, 34, 22);}
+    .list {color: rgb(192, 236, 255);}
+    h1 {color:bisque;}
+}
